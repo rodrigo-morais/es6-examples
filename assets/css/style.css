@@ -1,0 +1,25 @@
+body
+{
+    margin: 0;
+    overflow: hidden;
+}
+
+header
+{
+    position: relative;
+    clear: both;
+    width: 100%;
+    background-color: #F5F5F5;
+    border: solid 1px #F5F5F5;
+    padding: 1%;
+}
+
+ul
+{
+    list-style: none;
+}
+
+ul h2
+{
+    margin: 5px;
+}

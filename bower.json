@@ -1,0 +1,29 @@
+{
+  "name": "es6-examples",
+  "version": "0.1.0",
+  "homepage": "",
+  "authors": [
+    "Rodrigo Morais"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rodrigo-morais/es6-examples"
+  },
+  "description": "This project present the new sintaxe of EcmaScript6 and examples how each new feature works.",
+  "main": "./index.html",
+  "keywords": [
+    "EcmaScript6"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "component",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "Gruntfile.js"
+  ],
+  "devDependencies": {
+    "bootstrap": "~3.3.4"
+  }
+}
