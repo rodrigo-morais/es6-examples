@@ -14,10 +14,6 @@ module.exports = function (grunt) {
             all: ['app/**/*.js', 'tests/unit/**/*.js']
         },
         'babel': {
-            options: {
-                sourceMap: false,
-                modules: 'amd'
-            },
             dist: {
                 files: [{
                     expand: true,
@@ -54,6 +50,12 @@ module.exports = function (grunt) {
             app_css: {
                 cwd: './',
                 src: 'app/**/css/*.css',
+                dest: 'dist/',
+                expand: true
+            },
+            app_html: {
+                cwd: './',
+                src: 'app/**/*.html',
                 dest: 'dist/',
                 expand: true
             }
