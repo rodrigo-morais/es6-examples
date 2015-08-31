@@ -5,6 +5,60 @@
         <link rel="stylesheet" type="text/css" href="../../../vendor/bootstrap/dist/css/bootstrap.min.css">
     </head>
     <body>
-        <h1>Let</h1>
+        <header>
+            <h1>EcmaScript6 Examples - let</h1>
+        </header>
+        <main>
+            <p>
+                The let command came to EcmaScript6 to replace the var command. The var command was used to declare variables until EcmaScript5, but it had a problem which was that var don't respect the scope and it was responsible of a lot of mistakes. The let variable respect the scope, and it solve the problem of scope with variables in EcmaScript.
+            </p>
+            <p>
+                Let's see an example:
+            </p>
+
+            <pre>
+                <code>
+                    var sum_es5 = function(){
+                        var a = 5;
+
+                        if(a === 5){
+                            var a = 6;
+                            console.log(a);
+                        }
+
+
+                        console.log(a);
+                    }
+
+                    sum_es5();
+                </code>
+            </pre>
+            <p class="code">
+                Using var in EcmaScript5 the variable "a" doesn't respect the scope, and the number 6 is printed in console twice. The var command put all declarations of variables on top of function because of that doesn't exist scope to these variables. In this example in specific the variable "a" will be always one unique variable.
+            </p>
+
+            <pre>
+                <code>
+                    var sum_es6 = function(){
+                        let a = 5;
+
+                        if(a === 5){
+                            let a = 6;
+                            console.log(a);
+                        }
+
+
+                        console.log(a);
+                    }
+
+                    sum_es6();
+                </code>
+            </pre>
+            <p class="code">
+                Using let in EcmaScript6 the variable "a" respect the scope, and the numbers 6 and 5 are printed in console consequently. How let command respect the scope then this example has two variables "a" each one in its scope, and because of that the values are printed correctly.
+            </p>
+        </main>
+
+        <script src="let.js"></script>
     </body>
 </html>
