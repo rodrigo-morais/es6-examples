@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+        <link rel="stylesheet" href="../../../assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../vendor/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <header>
+            <h1>EcmaScript6 Examples - default parameters</h1>
+        </header>
+        <main>
+            <p>
+                EcmaScript 6 brings a very popular feature in other languages, and which makes a gap until EcmaScript 5. The default parameters makes easy work with functions that parameter can't be informed.
+            </p>
+            <p>
+                Let's see an example:
+            </p>
+
+            <pre>
+                <code>
+                    'use strict';
+
+                    var sum = function(a = 1, b =2){
+                        console.log(a + b);
+                    };
+
+                    sum();
+                    sum(4,5);
+                </code>
+            </pre>
+            <p class="code">
+                The function receive two parameters which have default values like 1 and 2. If the parameters are not informed the function will use the default values to makes a sum.
+                In the first call without to pass the parameters the result is 3 because the function has used the defaults parameters, and in second call where was informed the values 4 and 5 the result is 9 summing the values.
+            </p>
+
+        <script src="default-parameters.js"></script>
+    </body>
+</html>
