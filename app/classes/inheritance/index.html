@@ -47,6 +47,48 @@
             <p class="code">
                 To a class to inherit from another is necessary to use the keyword "extends" and the class will inherit all attributes, properties, and methods from another class.
             </p>
+
+            <pre>
+                <code>
+                    class Person{
+                        constructor(name){
+                            this._name = name;
+                        }
+
+                        get name(){
+                            return this._name;
+                        }
+
+                        set name(value){
+                            this._name = value;
+                        }
+                    }
+
+                    class Employee extends Person{
+                        constructor(title, name){
+                            super(name);
+                            this._title = title;
+                        }
+
+                        get title(){
+                            return this._title;
+                        }
+
+                        doWork(){
+                            return `${this._name} is working.`;
+                        }
+                    }
+
+                    let employee = new Employee('Developer', 'Rodrigo');
+
+                    employee.title; //=> Developer
+                    employee.name; //=> Rodrigo
+                    employee.doWork(); //=> Rodrigo is working.
+                </code>
+            </pre>
+            <p class="code">
+                When the class which is inheriting another class has a constructor, but is necessary keep the rules of superclass working is possible to use a method called "super". The method "super" will execute the code of same method, in this case in constructor, in superclass.
+            </p>
         </main>
 
         <script src="inheritance.js"></script>
