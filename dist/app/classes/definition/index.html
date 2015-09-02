@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+        <link rel="stylesheet" href="../../../assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../vendor/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <header>
+            <h1>EcmaScript6 Examples - definition classes</h1>
+        </header>
+        <main>
+            <p>
+                EcmaScript 6 brings the object orientation paradigm to make the developers' life easier. Probably the majority of developers who have contact with other languages as Ruby, C#, Java, and etc are accostumed with object orientation, and because of that work with classes and objects in EcmaScript 6 will make their life much better.
+            </p>
+            <p>
+                Let's see an example:
+            </p>
+
+            <pre>
+                <code>
+                    var MachineES5 = function(){};
+                </code>
+            </pre>
+            <p class="code">
+                In EcmaScript 5 a class was a function without body.
+            </p>
+
+            <pre>
+                <code>
+                    var sum_es6 = function(){
+                        let a = 5;
+
+                        if(a === 5){
+                            let a = 6;
+                            console.log(a);
+                        }
+
+
+                        console.log(a);
+                    }
+
+                    sum_es6();
+                </code>
+            </pre>
+            <p class="code">
+                Using let in EcmaScript6 the variable "a" respects the scope, and the numbers 6 and 5 are printed in console consequently. How let keyword respects the scope then this example has two variables "a" each one in its scope, and because of that the values are printed correctly.
+            </p>
+        </main>
+
+        <script src="definition.js"></script>
+    </body>
+</html>
