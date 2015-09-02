@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+        <link rel="stylesheet" href="../../../assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../vendor/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <header>
+            <h1>EcmaScript6 Examples - arrow functions</h1>
+        </header>
+        <main>
+            <p>
+                Arrow functions came with EcmaScript 6 to make possible to write functions without too much code and work with lexical this. Arrow functions are always anonymus. Arrow functions doesn't have anything functional, but it becomes easy to write functional way.
+            </p>
+            <p>
+                Let's see an example:
+            </p>
+
+            <pre>
+                <code>
+                    let add = (x, y) => x + y;
+                    add(3,5); //=> 8
+                </code>
+            </pre>
+            <p class="code">
+                Arrow functions has a sintaxe like that, where after equal signal are informed the parameters, after an arrow, and in the end the body.
+            </p>
+
+            <pre>
+                <code>
+                    let square = x => x * x;
+                    square(5); //=> 25
+                </code>
+            </pre>
+            <p class="code">
+                If exist only one parameter, the parentheses are not necessary.
+            </p>
+
+            <pre>
+                <code>
+                    let toUpper = () => 'test'.toUpperCase();
+                    toUpper(); //=> TEST
+                </code>
+            </pre>
+            <p class="code">
+                If doesn't exist parameters, the parentheses are necessary.
+            </p>
+
+            <pre>
+                <code>
+                    let sum = (x,y) =>{
+                        let result = x + y;
+                        return result;
+                    };
+                    sum(3,5); //=> 8
+                </code>
+            </pre>
+            <p class="code">
+                If the function has more than one line, so is necessary to use curly braces after the arrow.
+            </p>
+
+            <pre>
+                <code>
+                    let sum_array = (...arr) =>{
+                        let sum = 0;
+                        arr.forEach((n) => sum + n);
+
+                        return sum;
+                    };
+                    sum_array(1,4,6,7); //=> 18
+
+                    let double = (...arr) => arr.map((n) => n * 2);
+                    double(1,4,6,7); //=> [2,8,12,14]
+                </code>
+            </pre>
+            <p class="code">
+                Arrow functions make easier and shorter functional code.
+            </p>
+        </main>
+
+        <script src="arrow.js"></script>
+    </body>
+</html>
