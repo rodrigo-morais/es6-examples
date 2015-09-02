@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+        <link rel="stylesheet" href="../../../assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../vendor/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <header>
+            <h1>EcmaScript6 Examples - inheritance</h1>
+        </header>
+        <main>
+            <p>
+                Another feature which came with classes in EcmaScript 6 was inheritance. Now is possible that one class to inherit of another.
+            </p>
+            <p>
+                Let's see an example:
+            </p>
+
+            <pre>
+                <code>
+                    class Person{
+                        constructor(name){
+                            this._name = name;
+                        }
+
+                        get name(){
+                            return this._name;
+                        }
+
+                        set name(value){
+                            this._name = value;
+                        }
+                    }
+
+                    class Employee exyends Person{
+                        doWork(){
+                            return `${this._name} is working.`
+                        }
+                    }
+
+                    let employee = new Employee('Rodrigo');
+
+                    employee.name; //=> Rodrigo
+                    employee.doWork(); //=> Rodrigo is working.
+                </code>
+            </pre>
+            <p class="code">
+                To a class to inherit from another is necessary to use the keyword "extends" and the class will inherit all attributes, properties, and methods from another class.
+            </p>
+        </main>
+
+        <script src="inheritance.js"></script>
+    </body>
+</html>
