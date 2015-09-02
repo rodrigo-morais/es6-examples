@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+        <link rel="stylesheet" href="../../../assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../vendor/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <header>
+            <h1>EcmaScript6 Examples - definition classes</h1>
+        </header>
+        <main>
+            <p>
+                Another characteristic pretty common in object orientation paradigm are constructors. Constructors are one way to initialize the object when passing parameters or doing some actions to prepare the object to be used.
+            </p>
+            <p>
+                Let's see an example:
+            </p>
+
+            <pre>
+                <code>
+                    class MachineES6{
+                        constructor(name){
+                            this._name = name;
+                        }
+
+                        getName(){
+                            return this._name;
+                        }
+                    }
+
+                    let machineES6 = new MachineES6('Computer');
+
+                    machineES6.getName();
+                </code>
+            </pre>
+            <p class="code">
+                EcmaScript 6 has a keyword "constructor" which work as method inside a class, but it isn't a public method and will be called every time the class is instantiated.
+            </p>
+        </main>
+
+        <script src="constructor.js"></script>
+    </body>
+</html>
