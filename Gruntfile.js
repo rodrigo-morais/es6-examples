@@ -58,6 +58,11 @@ module.exports = function (grunt) {
                 src: 'app/**/*.html',
                 dest: 'dist/',
                 expand: true
+            },
+            app_generators_js: {
+                cwd: './',
+                src: 'app/functional/generators/generators.js',
+                dest: 'dist/app/functional/generators/generators.js'
             }
         },
         watch: {

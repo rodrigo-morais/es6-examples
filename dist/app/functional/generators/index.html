@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+        <link rel="stylesheet" href="../../../assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../vendor/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <header>
+            <h1>EcmaScript6 Examples - for of</h1>
+        </header>
+        <main>
+            <p>
+                Generators are one easy way to create iterable object. A generator is a function with a memory which is called when next method is executed and works as an iterable object.
+            </p>
+            <p>
+                Let's see an example:
+            </p>
+
+            <pre>
+                <code>
+                    let numbers = [6,9,1,3,8];
+                    let iterator = numbers[Symbol.iterator]();
+                    let next = iterator.next();
+
+                    while(!next.done){
+                        console.log(next); //=> {value: 6, done: false} - {value: 9, done: false} - ...
+                        next = iterator.next();
+                    }
+
+
+                    for(let n in numbers){
+                        console.log(n); //=> 0 - 1 - 2 - 3 - ...
+                    }
+
+                    for(let n of numbers){
+                        console.log(n); //=> 6 - 9 - 1 - ...
+                    }
+                </code>
+            </pre>
+            <p class="code">
+                When the array is converted in a iterable object is possible to take the values. Using "for in" it will catch the indexes and not the values, on the other hand the "for of" will catch the values.
+            </p>
+        </main>
+
+        <script src="generators.js"></script>
+    </body>
+</html>
