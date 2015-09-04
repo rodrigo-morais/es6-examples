@@ -76,6 +76,28 @@
             <p class="code">
                 Arrow functions make easier and shorter functional code.
             </p>
+
+            <pre>
+                <code>
+                    this._name = 'Rodrigo';
+                    function isRodrigo(){
+                        return this._name === 'Rodrigo';
+                    }
+                    isRodrigo(); //=> false
+
+                    let that = this;
+                    function isRodrigo2(){
+                        return that._name === 'Rodrigo';
+                    }
+                    isRodrigo2(); //=> true
+
+                    let isRodrigo3 = () => this._name === 'Rodrigo';
+                    isRodrigo3(); //=> true
+                </code>
+            </pre>
+            <p class="code">
+                Arrow functions works with lexical this, and because of that the "this" doesn't change inside a function. In EcmaScript 5 when is used a traditional function the "this" changed and is necessary to use some technique as to copy "this" to another variable.
+            </p>
         </main>
 
         <script src="arrow.js"></script>

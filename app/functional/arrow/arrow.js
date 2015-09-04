@@ -25,3 +25,17 @@ console.log(sum_array(1,4,6,7));
 
 let double = (...arr) => arr.map((n) => n * 2);
 console.log(double(1,4,6,7));
+
+/*function isRodrigo(){
+    return this._name === 'Rodrigo';
+}
+console.log(isRodrigo());
+
+let that = this;
+function isRodrigo2(){
+    return that._name === 'Rodrigo';
+}
+console.log(isRodrigo2());
+
+let isRodrigo3 = () => this._name === 'Rodrigo';
+console.log(isRodrigo3());*/

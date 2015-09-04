@@ -45,3 +45,17 @@ var double = function () {
     });
 };
 console.log(double(1, 4, 6, 7));
+
+/*function isRodrigo(){
+    return this._name === 'Rodrigo';
+}
+console.log(isRodrigo());
+
+let that = this;
+function isRodrigo2(){
+    return that._name === 'Rodrigo';
+}
+console.log(isRodrigo2());
+
+let isRodrigo3 = () => this._name === 'Rodrigo';
+console.log(isRodrigo3());*/
