@@ -40,6 +40,107 @@
             <p class="code">
                 When the array is converted in a iterable object is possible to take the values. Using "for in" it will catch the indexes and not the values, on the other hand the "for of" will catch the values.
             </p>
+
+            <pre>
+                <code>
+                    class Company{
+                        constructor(){
+                            this.employees = [];
+                        }
+
+                        addEmployees(names){
+                            this.employees = this.employees.concat(names);
+                        }
+
+                        *getEmployees(){
+                            for(let e of this.employees){
+                                yield e;
+                            }
+                        }
+                    }
+
+                    let count = 0;
+                    let company = new Company();
+                    company.addEmployees(['Paul','Arnold','Carol','Susan','Ryan']);
+
+                    for(let employee of company.getEmployees()){
+                        console.log(employee); //=> Paul, Arnold, Carol, Susan, Ryan
+                        count += 1;
+                    }
+
+                    console.log(count); //=> 5
+                </code>
+            </pre>
+            <p class="code">
+                Is possible, and extremely useful to use generators inside class to make some properties and functions iterable.
+            </p>
+
+            <pre>
+                <code>
+                    class Product{
+                        constructor(name, weight, price){
+                            this._name = name;
+                            this._weight = weight;
+                            this._price = price;
+                        }
+
+                        get name(){
+                            return this._name;
+                        }
+
+                        get weight(){
+                            return this._weight;
+                        }
+
+                        get price(){
+                            return this._price;
+                        }
+                    }
+
+                    class Store{
+                        constructor(){
+                            this.products = [];
+                        }
+
+                        addProducts(products){
+                            this.products = this.products.concat(products);
+                        }
+
+                        *getProducts(){
+                            for(let e of this.products){
+                                yield e;
+                            }
+                        }
+                    }
+
+                    count = 0;
+                    let store = new Store();
+                    let p1 = new Product('ChromeCast', 10, 40);
+                    let p2 = new Product('Book', 5, 20);
+                    let p3 = new Product('TV', 100, 400);
+                    let p4 = new Product('Car', 1200, 4800);
+                    let p5 = new Product('Smart Phone', 10, 140);
+                    store.addProducts([p1,p2, p3, p4, p5]);
+
+                    let filter = function*(items, predicate){
+                        for(let item of items){
+                            if(predicate(item)){
+                                yield item;
+                            }
+                        }
+                    };
+
+                    for(let product of filter(store.getProducts(), p => p.weight >= 100)){
+                        console.log(product); //=> Product {_name: "TV", _weight: 100, _price: 400}, Product {_name: "Car", _weight: 1200, _price: 4800}
+                        count += 1;
+                    }
+
+                    console.log(count); //=> 2
+                </code>
+            </pre>
+            <p class="code">
+                Another feature where generators are pretty useful is to create generic functions. For example, to filter data in a iterable element is pretty useful and simple. Like in this example where to filter products about any property or rules is totally easy.
+            </p>
         </main>
 
         <script src="generators.js"></script>
