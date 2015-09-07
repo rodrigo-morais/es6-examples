@@ -10,7 +10,7 @@
         </header>
         <main>
             <p>
-                Method fill from an array in EcmaScript 6 have the function of change the values inside an array for the value informed.
+                Method copyWithin from an array in EcmaScript 6 have the function of copy a part of array over another part.
             </p>
             <p>
                 Let's see an example:
@@ -18,18 +18,18 @@
 
             <pre>
                 <code>
-                    let arr1 = [1,3,5,10,12];
-                    console.log(arr1.fill('z')); //=> ['z', 'z', 'z', 'z', 'z']
+                    let arr1 = [1,3,5,10];
+                    console.log(arr1.copyWithin(2, 0)); //=> [1, 3, 1, 3]
 
-                    let arr2 = [2,5,7,9];
-                    console.log(arr2.fill('a',2,3)); //=> [2, 5, 'a', 9]
+                    arr1 = [1,3,5,10];
+                    console.log(arr1.copyWithin(0,2));  //=> [5, 10, 5, 10]
                 </code>
             </pre>
             <p class="code">
-                The fill method can change all values or just in a part of array delimited by start and end parameters.
+                The copyWithin method have two parameters, the first one is "to" and the second one is "from". Is possible to pick up a part in front of the array and put in the end, or vice versa.
             </p>
         </main>
 
-        <script src="fill.js"></script>
+        <script src="copy.js"></script>
     </body>
 </html>
