@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+        <link rel="stylesheet" href="../../../assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../vendor/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <header>
+            <h1>EcmaScript6 Examples - array - find</h1>
+        </header>
+        <main>
+            <p>
+                EcmaScript 6 has a new array method which makes easy to looking for a value inside an array.
+            </p>
+            <p>
+                Let's see an example:
+            </p>
+
+            <pre>
+                <code>
+                    let arr1 = [1,3,5,10,12];
+                    let match = arr1.find(n => n > 5);
+                    console.log(match); //=> 10
+
+                    match = arr1.find(n => n > 50);
+                    console.log(match); //=> undefined
+
+                    let find_bigger_than_five = (element, index, array) => {
+                        console.log(element); //=> 1, 3, 5, 10
+                        console.log(index); //=> 0, 1, 2, 3
+                        console.log(array); //=> [1,3,5,10,12]
+                        if(element > 5){
+                            return element;
+                        }
+                    };
+                    match = arr1.find(find_bigger_than_five);
+                    console.log(match); //=> 10
+                </code>
+            </pre>
+            <p class="code">
+                Find method from an array can receive a arrow function or a common function. In both cases the find method will looking for the value according the statement informed, and it will always return one value or undefined.
+            </p>
+        </main>
+
+        <script src="find.js"></script>
+    </body>
+</html>

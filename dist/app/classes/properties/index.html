@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+        <link rel="stylesheet" href="../../../assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../vendor/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <header>
+            <h1>EcmaScript6 Examples - properties</h1>
+        </header>
+        <main>
+            <p>
+                To work with encapsulation EcmaScript 6 brings properties to access the attributes of a class. Get and Set are pretty famous and useful in languages as Java and C#, and now is possible to use in EcmaScript.
+            </p>
+            <p>
+                Let's see an example:
+            </p>
+
+            <pre>
+                <code>
+                    class MachineES6{
+                        constructor(name){
+                            this._name = name;
+                        }
+
+                        get name(){
+                            return this._name;
+                        }
+
+                        set name(value){
+                            this._name = value;
+                        }
+                    }
+
+                    let machineES6 = new MachineES6('Computer');
+
+                    machineES6.name; //=> Computer
+
+                    machineES6.name = "Laptop";
+                    machineES6.name; //=> Laptop
+                </code>
+            </pre>
+            <p class="code">
+                Unfortunately EcmaScript doesn't have one way to work with private attributes, and to do that in nowadays exist a convention where private attributes to start with underscore. Private attributes are a promise to EcmaScript 7, but right now is possible to work with properties using Get and Set.
+            </p>
+        </main>
+
+        <script src="properties.js"></script>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+        <link rel="stylesheet" href="../../../assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../vendor/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <header>
+            <h1>EcmaScript6 Examples - const</h1>
+        </header>
+        <main>
+            <p>
+                The const keyword came to EcmaScript6 to allow the language works with constants and have immutable values. Const keyword will create a immutable variable which can't be reassigned after to be created.
+            </p>
+            <p>
+                Let's see an example:
+            </p>
+
+            <pre>
+                <code>
+                    var const_es5 = function(){
+                        var a = 5;
+
+                        if(a === 5){
+                            a = 6;
+                            console.log(a);
+                        }
+
+
+                        console.log(a);
+                    }
+
+                    const_es5();
+                </code>
+            </pre>
+            <p class="code">
+                In EcmaScript5 didn't exist anything to work with constants, the most closest of this could be use var and to pay attention to not reassigned the variable.
+            </p>
+
+            <pre>
+                <code>
+                    var const_es6 = function(){
+                        const a = 5;
+
+                        if(a === 5){
+                            //a = 6;
+                            console.log(a);
+                        }
+
+
+                        console.log(a);
+                    }
+
+                    const_es6();
+                </code>
+            </pre>
+            <p class="code">
+                In EcmaScript6 is possible to declare a constant, but is necessary to pay attention to not change its value because it will cause a error message.
+            </p>
+
+        <script src="const.js"></script>
+    </body>
+</html>
