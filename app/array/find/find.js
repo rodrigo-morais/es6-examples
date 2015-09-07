@@ -17,3 +17,14 @@ let find_bigger_than_five = (element, index, array) => {
 };
 match = arr1.find(find_bigger_than_five);
 console.log(match);
+
+
+//findIndex
+match = arr1.findIndex(n => n > 5);
+console.log(match);
+
+match = arr1.findIndex(n => n > 50);
+console.log(match);
+
+match = arr1.findIndex(find_bigger_than_five);
+console.log(match);

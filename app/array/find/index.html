@@ -40,6 +40,22 @@
             <p class="code">
                 Find method from an array can receive a arrow function or a common function. In both cases the find method will looking for the value according the statement informed, and it will always return one value or undefined.
             </p>
+
+            <pre>
+                <code>
+                    match = arr1.findIndex(n => n > 5);
+                    console.log(match); //=> 3
+
+                    match = arr1.findIndex(n => n > 50);
+                    console.log(match); //=> -1
+
+                    match = arr1.findIndex(find_bigger_than_five);
+                    console.log(match); //=> 3
+                </code>
+            </pre>
+            <p class="code">
+                The findIndex method from an array is similar of find method, but instead to return the value it returns the index. Another difference is that if the statement doesn't find nothing it returns -1 instead the undefined value.
+            </p>
         </main>
 
         <script src="find.js"></script>
