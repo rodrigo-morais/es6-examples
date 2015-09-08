@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+        <link rel="stylesheet" href="../../../assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../vendor/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <header>
+            <h1>EcmaScript6 Examples - array - entries and keys</h1>
+        </header>
+        <main>
+            <p>
+                EcmaScript 6 has two new features to transform an array in an iterable object. The first one is "entries" that transform an array in an iterable object with key-value pair. The second one is "keys" which transform an array in an iterable object with a list of keys.
+            </p>
+            <p>
+                Let's see an example:
+            </p>
+
+            <pre>
+                <code>
+                    let arr = ['Paul', 'Ringo', 'John'];
+
+                    let entries = arr.entries();
+                    console.log(entries);
+                    let first = entries.next().value;
+                    console.log(first[0]);
+                    console.log(first[1]);
+
+                    let keys = arr.keys();
+                    console.log(keys);
+                    let firstKey = keys.next().value;
+                    console.log(firstKey);
+                </code>
+            </pre>
+            <p class="code">
+                In the first example using entries method the object became iterable, and each item has a key and a value. In second example using keys method was created an iterable object which has a list of keys.
+            </p>
+        </main>
+
+        <script src="entriesKeys.js"></script>
+    </body>
+</html>
