@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+        <link rel="stylesheet" href="../../../assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../vendor/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <header>
+            <h1>EcmaScript6 Examples - array - of</h1>
+        </header>
+        <main>
+            <p>
+                EcmaScript 6 has a new method in Array object which transform an array-like or iterable in a truth array.
+            </p>
+            <p>
+                Let's see an example:
+            </p>
+
+            <pre>
+                <code>
+                    let arrLike = window.document.querySelectorAll('div');
+                    console.log(arrLike);
+                    console.log(arrLike.forEach);
+
+                    let fromArr = Array.from(arrLike);
+                    console.log(fromArr);
+                    console.log(fromArr.forEach);
+                </code>
+            </pre>
+            <p class="code">
+                When used the method querySelectorAll to grab something from UI it will return an array-like. For example, if is necessary to have a loop among the return of the UI elements is necessary has a truth array, and to do that is necessary to convert the array-like in a truth array using the Array.from.
+            </p>
+        </main>
+
+        <script src="from.js"></script>
+    </body>
+</html>
