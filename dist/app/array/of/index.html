@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+        <link rel="stylesheet" href="../../../assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../vendor/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <header>
+            <h1>EcmaScript6 Examples - array - of</h1>
+        </header>
+        <main>
+            <p>
+                EcmaScript 6 has brought a solution to something that was causing too much confusion in developer's mind when they were working with arrays. Is possible to create an array using the expression "new Array", and it has two constructors. If it receives more than one parameter it understands that each one is a piece of array, and if it receives only one parameter it understands that it is the size of array. When the developer want to inform just one value for the array with size one it was impossible. The "Array.of" came to resolve that, now always that it is used the EcmaScript understands that it is the values of array, and never the size.
+            </p>
+            <p>
+                Let's see an example:
+            </p>
+
+            <pre>
+                <code>
+                    let arr1 = new Array(1, 2 ,3);
+                    console.log(arr1.length); //=> 3
+                    console.log(JSON.stringify(arr1)); //=> 1, 2, 3
+
+                    let arr2 = new Array(3);
+                    console.log(arr2.length); //=> 3
+                    console.log(JSON.stringify(arr2)); //=> null, null, null
+
+                    let arr3 = Array.of(3);
+                    console.log(arr3.length); //=> 1
+                    console.log(JSON.stringify(arr3)); //=> 3
+                </code>
+            </pre>
+            <p class="code">
+                The first two examples present how the expression "new Array" works, and how is impossible inform only one value to a new array using that. The last example present how solve it using the new expression "Array.of".
+            </p>
+        </main>
+
+        <script src="of.js"></script>
+    </body>
+</html>
