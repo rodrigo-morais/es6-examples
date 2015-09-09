@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+        <link rel="stylesheet" href="../../../assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../vendor/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <header>
+            <h1>EcmaScript6 Examples - promise</h1>
+        </header>
+        <main>
+            <p>
+                EcmaScript 6 brings a new way to work with asynchronous functions. To work with asynchronous function before was necessary to pass callbacks which will be executed when the async function finished its task, and this caused a big problem with callback hell. Now EcmaScript 6 has Promise which control the flow of async function and makes easy to call a new function when it finished.
+            </p>
+            <p>
+                Let's see an example:
+            </p>
+
+            <pre>
+                <code>
+                    let promise = new Promise(function(resolve, reject){
+                        resolve(1);
+                    });
+                    promise.then(function(data){
+                        console.log(data); //=> 1
+                    });
+                </code>
+            </pre>
+            <p class="code">
+                Promise receives a function with two parameters where each one is a function. The first parameter have to be called only once when exist a success. After that the promise can call its "then" method, this method receive in first parameter a function with data returned by the success result from promise.
+            </p>
+
+            <pre>
+                <code>
+                    let rejectPromise = new Promise(function(resolve, reject){
+                        reject(Error('Error 1'));
+                    });
+                    rejectPromise.then(function(){
+                        //success
+                    },
+                    function(error){
+                        console.log(error.message); //=> Error 1
+                    });
+
+                    rejectPromise.catch(function(error){
+                        console.log(error.message); //=> Error 1
+                    });
+                </code>
+            </pre>
+            <p class="code">
+                When the promise doesn't have a success it have to call the second parameter which is a function too, but it is a insuccess function. Then in "then" method has a second parameter which is a function that tread the insuccess. Or is possible to call the method "catch" which will treat the insuccess situation in a promise.
+            </p>
+
+            <pre>
+                <code>
+                    let previousPromise = new Promise(function(resolve, reject){
+                        resolve('test');
+                    });
+                    let secondPromise = new Promise(function(resolve, reject){
+                        resolve(previousPromise);
+                    });
+                    secondPromise.then(function(data){
+                        console.log(data); //=> test
+                    });
+                </code>
+            </pre>
+            <p class="code">
+                Is possible to nest promises, and in the last promise to access the data.
+            </p>
+
+            <pre>
+                <code>
+                    let staticPreviousPromise = Promise.resolve('previous');
+                    let secondStaticPromise = Promise.resolve(staticPreviousPromise);
+                    secondStaticPromise.then(function(data){
+                        console.log(data); //=> previous
+                    });
+                </code>
+            </pre>
+            <p class="code">
+                Is possible to use a shortcut to work with nested promises.
+            </p>
+        </main>
+
+        <script src="basic.js"></script>
+    </body>
+</html>
