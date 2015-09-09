@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+        <link rel="stylesheet" href="../../../assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../vendor/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <header>
+            <h1>EcmaScript6 Examples - array - find</h1>
+        </header>
+        <main>
+            <p>
+                Set is a new data structure, but is possible to compare with array. The most important characteristic of Set is that it doesn't accept duplicated value.
+            </p>
+            <p>
+                Let's see an example:
+            </p>
+
+            <pre>
+                <code>
+                    let set1 = new Set();
+                    set1.add(1);
+                    set1.add(1);
+                    set1.add(2);
+                    set1.add(3);
+                    console.log(set1.size); //=> 3
+
+                    set1.delete(1);
+                    console.log(set1.size); //=> 2
+
+                    set1.add(2);
+                    console.log(set1.size); //=> 2
+
+                    set1.clear();
+                    console.log(set1.size); //=> 0
+                </code>
+            </pre>
+            <p class="code">
+                In the example, first test try add twice the number 1, but only one number 1 is added. After is tried to add a new number 2, but it isn't allowed.
+            </p>
+        </main>
+
+        <script src="map.js"></script>
+    </body>
+</html>

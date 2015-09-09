@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+        <link rel="stylesheet" href="../../../assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../vendor/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <header>
+            <h1>EcmaScript6 Examples - array - find</h1>
+        </header>
+        <main>
+            <p>
+                Map is a new data structure very similar to object, but sometimes it works like an array too. As a Set, Map doesn't accept repeated values.
+            </p>
+            <p>
+                Let's see an example:
+            </p>
+
+            <pre>
+                <code>
+                    let map = new Map();
+                    map.set('age', 35);
+                    map.set('firstName', 'Rodrigo');
+                    map.set('middleName', '');
+                    map.set('lastName', 'Morais');
+                    map.set('profession', 'Software Engineer');
+                    console.log(map.size); //=> 5
+
+                    map.set('middleName', 'Moreira');
+                    console.log(map.size); //=> 5
+
+                    map.delete('age');
+                    console.log(map.size); //=> 4
+
+                    map.clear();
+                    console.log(map.size); //=> 0
+
+                    map = new Map([['age', 35], ['firstName', 'Rodrigo'], ['middleName', 'Moreira'], ['lastName', 'Morais'], ['profession', 'Software Engineer']]);
+                    console.log(map.size); //=> 5
+
+                    map.forEach(function(value, key){
+                        console.log(key + '-' + value); //=> age-35, firstName-Rodrigo, ...
+                    });
+
+                    for(let item of map){
+                        console.log(item[0] + '-' + item[1]); //=> age-35, firstName-Rodrigo, ...
+                    }
+
+
+
+                    for(let [key, value] of map){
+                        console.log(key + '-' + value); //=> age-35, firstName-Rodrigo, ...
+                    }
+                </code>
+            </pre>
+            <p class="code">
+                Map can use the method "set" to add new values or receive an array of arrays in its constructor. Map is iterable and it can be used in loops to get the data.
+            </p>
+        </main>
+
+        <script src="map.js"></script>
+    </body>
+</html>
