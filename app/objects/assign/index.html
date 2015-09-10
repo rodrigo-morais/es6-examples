@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+        <link rel="stylesheet" href="../../../assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../vendor/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <header>
+            <h1>EcmaScript6 Examples - is</h1>
+        </header>
+        <main>
+            <p>
+                The Object class in EcmaScript 6 brings a new method called "assign" which works with composition. In some JavaScript's libraries there is a feature called "mixin" which extend a class with new methods, in ES 6 it is called "assign".
+            </p>
+            <p>
+                Let's see an example:
+            </p>
+
+            <pre>
+                <code>
+                    let person = {
+                        hurt: false,
+                        exploded: false
+                    };
+
+                    let soldier = {
+                        hit: function(target){
+                            target.hurt = true;
+                        }
+                    };
+
+                    let gun = {
+                        shot: function(target){
+                            target.exploded = true;
+                        }
+                    };
+
+                    Object.assign(soldier, gun);
+
+                    console.log('Person Hurted:' + person.hurt);
+                    console.log('Person Exploded:' + person.exploded);
+
+                    soldier.hit(person);
+                    console.log('Person Hurted:' + person.hurt);
+                    console.log('Person Exploded:' + person.exploded);
+
+                    soldier.shot(person);
+                    console.log('Person Hurted:' + person.hurt);
+                    console.log('Person Exploded:' + person.exploded);
+                </code>
+            </pre>
+            <p class="code">
+                In this example the object "Soldier" is extended with a object "Gun", and it makes possible that a soldier firing a shot. An object can be extended by n other objects.
+            </p>
+        </main>
+
+        <script src="assign.js"></script>
+    </body>
+</html>
