@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+        <link rel="stylesheet" href="../../../assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../vendor/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <header>
+            <h1>EcmaScript6 Examples - is</h1>
+        </header>
+        <main>
+            <p>
+                The Object class in EcmaScript 6 brings a new method called "is" which works similar to triple equals.
+            </p>
+            <p>
+                Let's see an example:
+            </p>
+
+            <pre>
+                <code>
+                    console.log(-0 === 0); //=> true
+                    console.log(Object.is(-0,0)); //=> false
+
+                    console.log(NaN === NaN); //=> false
+                    console.log(Object.is(NaN,NaN)); //=> true
+
+                    let person = {
+                        hurt: false,
+                        exploded: false
+                    };
+                    console.log(person === person); //=> true
+                    console.log(Object.is(person, person)); //=> true
+
+                    let person2 = person;
+                    console.log(person === person2); //=> false
+                    console.log(Object.is(person, person2)); //=> false
+
+                    let person3 = {
+                        hurt: false,
+                        exploded: false
+                    };
+                    console.log(person === person3); //=> false
+                    console.log(Object.is(person, person3)); //=> false
+                </code>
+            </pre>
+            <p class="code">
+                Triple equals has two strange behaviors. First when compare -0 with 0, it is equal using triple equals, but is different using Object.is.
+                Another strange behavior is when uses triple equals to compare two NaN. In this case triple equals return false, and Object.is returns true which is the correct answer.
+            </p>
+        </main>
+
+        <script src="is.js"></script>
+    </body>
+</html>
