@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+        <link rel="stylesheet" href="../../../assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../vendor/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <header>
+            <h1>EcmaScript6 Examples - is</h1>
+        </header>
+        <main>
+            <p>
+                EcmaScript 6 has a new feature to objects called "Proxy", it can add new behaviours to an object creating a new one without to change the original object.
+            </p>
+            <p>
+                Let's see an example:
+            </p>
+
+            <pre>
+                <code>
+                    let soldier = {
+                        weapon: 'laser',
+                        allowed: 'to kill',
+                        bullets: 0
+                    };
+
+                    let proxySoldier = new Proxy(soldier, {
+                        get(target, property) {
+                            if(property === 'bullets' && target.weapon === 'laser'){
+                                return 'infinite';
+                            }
+                            else{
+                                return target[property];
+                            }
+                        },
+                        set(target, property, value){
+                            if(property === 'weapon' && value === 'laser'){
+                                target.bullets = 0;
+                            }
+                            else if(property === 'bullets' && target.weapon === 'laser'){
+                                console.log("Laser doesn't have bullets!");
+                            }
+                            else{
+                                target[property] = value;
+                            }
+                        }
+                    });
+
+                    console.log('Soldier');
+                    console.log(soldier.weapon); //=> laser
+                    console.log(soldier.bullets); //=> 0
+
+                    console.log('Proxy Soldier');
+                    console.log(proxySoldier.weapon); //=> laser
+                    console.log(proxySoldier.bullets); //=> Laser doesn't have bullets!
+
+                    soldier.bullets = 10;
+
+                    console.log('Soldier');
+                    console.log(soldier.weapon); //=> laser
+                    console.log(soldier.bullets); //=> 10
+
+                    console.log('Proxy Soldier');
+                    console.log(proxySoldier.weapon); //=> laser
+                    console.log(proxySoldier.bullets); //=> Laser doesn't have bullets!
+
+                    soldier.weapon = 'gun';
+
+                    console.log('Soldier');
+                    console.log(soldier.weapon); //=> gun
+                    console.log(soldier.bullets); //=> 10
+
+                    console.log('Proxy Soldier');
+                    console.log(proxySoldier.weapon); //=> gun
+                    console.log(proxySoldier.bullets); //=> 10
+
+                    soldier.weapon = 'laser';
+
+                    console.log('Soldier');
+                    console.log(soldier.weapon);  //=> laser
+                    console.log(soldier.bullets); //=> 10
+
+                    console.log('Proxy Soldier');
+                    console.log(proxySoldier.weapon); //=> laser
+                    console.log(proxySoldier.bullets); //=> Laser doesn't have bullets!
+                </code>
+            </pre>
+            <p class="code">
+                In this example was add some new behaviours to proxy object because of that in some situation in methods Set and Get this object behaves different.
+            </p>
+        </main>
+
+        <script src="proxy.js"></script>
+    </body>
+</html>

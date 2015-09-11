@@ -63,6 +63,11 @@ module.exports = function (grunt) {
                 cwd: './',
                 src: 'app/functional/generators/generators.js',
                 dest: 'dist/app/functional/generators/generators.js'
+            },
+            app_proxy_js: {
+                cwd: './',
+                src: 'app/objects/proxy/proxy.js',
+                dest: 'dist/app/objects/proxy/proxy.js'
             }
         },
         watch: {
