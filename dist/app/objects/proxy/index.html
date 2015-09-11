@@ -21,7 +21,10 @@
                     let soldier = {
                         weapon: 'laser',
                         allowed: 'to kill',
-                        bullets: 0
+                        bullets: 0,
+                        attack(){
+                            return 'kill people';
+                        }
                     };
 
                     let proxySoldier = new Proxy(soldier, {
@@ -87,6 +90,30 @@
             </pre>
             <p class="code">
                 In this example was add some new behaviours to proxy object because of that in some situation in methods Set and Get this object behaves different.
+            </p>
+
+            <pre>
+                <code>
+                    soldier.attack = new Proxy(soldier.attack,{
+                        apply(target, context, args){
+                            if(context === 'pacifist'){
+                                return "pacifists don't attack nobody";
+                            }
+                            else{
+                                return target.apply(context, args);
+                            }
+                        }
+                    });
+
+                    let pacifist = {};
+                    pacifist.attack = soldier.attack;
+
+                    console.log(soldier.attack()); //=> kill people
+                    console.log(pacifist.attack()); //=> pacifists don't attack nobody
+                </code>
+            </pre>
+            <p class="code">
+                Is possible to use proxy with functions too. With that is possible that the same function works different with differents contexts.
             </p>
         </main>
 
