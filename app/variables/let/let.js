@@ -4,7 +4,7 @@ var sum_es5 = function(){
     var a = 5;
 
     if(a === 5){
-        //let a = 6; => return message error
+        a = 6;// => return message error
         console.log(a);
     }
 
@@ -18,7 +18,7 @@ var sum_es6 = function(){
     let a = 5;
 
     if(a === 5){
-        //let a = 6; => return message error
+        let a = 6;
         console.log(a);
     }
 
