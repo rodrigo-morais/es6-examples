@@ -18,31 +18,6 @@
 
             <pre>
                 <code>
-                    let numbers = [6,9,1,3,8];
-                    let iterator = numbers[Symbol.iterator]();
-                    let next = iterator.next();
-
-                    while(!next.done){
-                        console.log(next); //=> {value: 6, done: false} - {value: 9, done: false} - ...
-                        next = iterator.next();
-                    }
-
-
-                    for(let n in numbers){
-                        console.log(n); //=> 0 - 1 - 2 - 3 - ...
-                    }
-
-                    for(let n of numbers){
-                        console.log(n); //=> 6 - 9 - 1 - ...
-                    }
-                </code>
-            </pre>
-            <p class="code">
-                When the array is converted in a iterable object is possible to take the values. Using "for in" it will catch the indexes and not the values, on the other hand the "for of" will catch the values.
-            </p>
-
-            <pre>
-                <code>
                     class Company{
                         constructor(){
                             this.employees = [];
