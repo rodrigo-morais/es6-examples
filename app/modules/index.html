@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+        <link rel="stylesheet" href="../../assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../vendor/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <header>
+            <h1>EcmaScript6 Examples - modules</h1>
+        </header>
+        <main>
+            <p>
+                Until ES5 didn't exist any way to work with modules nativily, to do that was necessary to use CommonJS or AMD. ES6 is bringing the modules to the core of language using the similar issues from CommonJS and AMD.
+            </p>
+            <p>
+                Let's see an example:
+            </p>
+
+            <pre>
+                <code>
+                    //.employee.js
+                    export class Employee {
+                        constructor(name) {
+                            this._name = name;
+                        }
+
+                        get name() {
+                            return this._name;
+                        }
+
+                        doWork() {
+                            return '${this._name} is working';
+                        }
+                    }
+
+                    //.module.js
+                    import Employee from './employee.js'
+
+                    var employee = new Employee('Rodrigo');
+                    employee.doWork(); //Rodrigo is working
+                </code>
+            </pre>
+            <p class="code">
+                The component, class, or piece of code which will be imported by another file has to use the reserved word "export" to becomes exportable. To import a file is necessary to use the reserved word "import", and then the file is imported in a variable.
+            </p>
+        </main>
+
+        <script src="employee.js"></script>
+        <script src="module.js"></script>
+    </body>
+</html>
