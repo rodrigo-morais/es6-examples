@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+        <link rel="stylesheet" href="../../../assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../vendor/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <header>
+            <h1>EcmaScript6 Examples - modules - multiples</h1>
+        </header>
+        <main>
+            <p>
+                ES6 brings a new feature which allows that a same file to export more than one module.
+            </p>
+            <p>
+                Let's see an example:
+            </p>
+
+            <pre>
+                <code>
+                    //.exports.js
+                    export class Employee {
+                        constructor(name) {
+                            this._name = name;
+                        }
+
+                        get name() {
+                            return this._name;
+                        }
+
+                        doWork() {
+                            return '${this._name} is working';
+                        }
+                    }
+
+                    export let emp = new Employee('Morais');
+
+                    export let number = 12;
+
+                    //.imports.js
+                    import {Employee, emp, number} from './exports.js';
+
+                    var employee = new Employee('Rodrigo');
+                    employee.doWork(); //Rodrigo is working
+
+                    emp.doWork();
+
+                    console.log(number);
+                </code>
+            </pre>
+            <p class="code">
+                Is possible that one file to export more than one element (class, object, native object, and etc). To import it is necessary to receive each object with correct name and order.
+            </p>
+
+            <pre>
+                <code>
+                    //.exports.js
+                    export class Employee {
+                        constructor(name) {
+                            this._name = name;
+                        }
+
+                        get name() {
+                            return this._name;
+                        }
+
+                        doWork() {
+                            return '${this._name} is working';
+                        }
+                    }
+
+                    export let emp = new Employee('Morais');
+
+                    export let number = 12;
+
+                    //.imports.js
+                    import {Employee, emp, number} from './exports.js';
+
+                    var employee = new Employee('Rodrigo');
+                    employee.doWork(); //Rodrigo is working
+
+                    emp.doWork();
+
+                    console.log(number);
+                </code>
+            </pre>
+            <p class="code">
+                Is possible that the import file uses a variable to receive all element which are exported. In this case this variable is an object which has inside of itself all element exported.
+            </p>
+        </main>
+
+        <script src="exports.js"></script>
+        <script src="imports.js"></script>
+        <script src="imports_variable.js"></script>
+    </body>
+</html>
