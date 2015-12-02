@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+        <link rel="stylesheet" href="../../../assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../../vendor/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <header>
+            <h1>EcmaScript6 Examples - modules - default</h1>
+        </header>
+        <main>
+            <p>
+                ES6 has a feature to export a single module called default. When the export uses the reserved word "default" is not necessary to use the same name of variable as the module's name. The destructuring is implicit, and the name is insignificant.
+            </p>
+            <p>
+                Let's see an example:
+            </p>
+
+            <pre>
+                <code>
+                    //.employee.js
+                    export class Employee {
+                        constructor(name) {
+                            this._name = name;
+                        }
+
+                        get name() {
+                            return this._name;
+                        }
+
+                        doWork() {
+                            return '${this._name} is working';
+                        }
+                    }
+
+                    //.module_error.js
+                    import factory from './employee.js'
+
+                    var employee = new factory('Rodrigo');
+                    employee.doWork(); //Rodrigo is working
+                </code>
+            </pre>
+            <p class="code">
+                In this case the export is not using the reserved word "default", and because of that is necessary that the variable which receives the module has the same name of the module. If it doesn't happen the code returns an error.
+            </p>
+
+            <pre>
+                <code>
+                    //.employee_default.js
+                    export default class Employee {
+                        constructor(name) {
+                            this._name = name;
+                        }
+
+                        get name() {
+                            return this._name;
+                        }
+
+                        doWork() {
+                            return '${this._name} is working';
+                        }
+                    }
+
+                    //.module_default.js
+                    import factory from './employee.js'
+
+                    var employee = new factory('Rodrigo');
+                    employee.doWork(); //Rodrigo is working
+                </code>
+            </pre>
+            <p class="code">
+                In this case the export is using the reserved word "default", and because of that is not necessary that the variable which receives the module has the same name of the module.
+            </p>
+        </main>
+
+        <script src="employee_default.js"></script>
+        <script src="module_default.js"></script>
+
+        <script src="employee.js"></script>
+        <script src="module.js"></script>
+    </body>
+</html>
