@@ -1,4 +1,4 @@
-import factory from './employee.js';
+import factory from './employee_default.js';
 
 var employee = new factory('Rodrigo');
-employee.doWork(); //Rodrigo is working
+console.log(employee.doWork()); //Rodrigo is working

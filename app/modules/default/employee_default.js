@@ -1,4 +1,4 @@
-export class Employee {
+export default class Employee {
 	constructor(name) {
 		this._name = name;
 	}
@@ -8,6 +8,6 @@ export class Employee {
 	}
 
 	doWork() {
-		return '${this._name} is working';
+		return `${this._name} is working`;
 	}
 }
