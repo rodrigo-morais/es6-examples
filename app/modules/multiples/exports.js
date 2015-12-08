@@ -8,7 +8,7 @@ export class Employee {
 	}
 
 	doWork() {
-		return '${this._name} is working';
+		return `${this._name} is working`;
 	}
 }
 
