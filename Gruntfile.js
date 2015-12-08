@@ -14,11 +14,24 @@ module.exports = function (grunt) {
             all: ['app/**/*.js', 'tests/unit/**/*.js']
         },
         'babel': {
-            dist: {
+            general: {
                 files: [{
                     expand: true,
                     cwd: 'app',
                     src: ['**/*.js'],
+                    dest: 'dist/app',
+                    ext: '.js'
+                }]
+            },
+            amd: {
+                'options': {
+                    'experimental': true,
+                    'modules': 'amd'
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'app',
+                    src: ['modules/**/*.js'],
                     dest: 'dist/app',
                     ext: '.js'
                 }]
@@ -78,7 +91,7 @@ module.exports = function (grunt) {
                 'index.html'
             ],
             tasks: [
-                'jshint', 'clean', 'babel', 'copy'
+                'jshint', 'clean', 'babel:general', 'babel:amd', 'copy'
             ]
         }
     });
@@ -88,5 +101,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-babel');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.registerTask('default', ['jshint', 'clean', 'babel', 'copy']);
+    grunt.registerTask('default', ['jshint', 'clean', 'babel:general', 'babel:amd', 'copy']);
 };

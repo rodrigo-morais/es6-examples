@@ -5,4 +5,4 @@ vendor/
 coverage/
 /tmp/
 /scripts/bower/bower-*
-dist/
+/dist/
